@@ -1,33 +1,40 @@
 import './App.css';
+import { useEffect } from 'react';
 
 function PortHeader(){
   return(
     <div id="port-header">
-    <a class="active header-item" href="#home">Home</a>
-    <a class="header-item" href="#contact">Contact</a>
-    <a class="header-item" href="#about">About</a>
+    <a className="active header-item" href="#home">Home</a>
+    <a className="header-item" href="#contact">Contact</a>
+    <a className="header-item" href="#about">About</a>
   </div>
   );
 }
 
-const observer = new IntersectionObserver((entries)=>{
-  entries.forEach((entry)=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('show');
-    }
-    else{
-      entry.target.classList.remove('show');
-    }
-  });
-});
-const hiddenElements = document.querySelectorAll('.hidden');
-hiddenElements.forEach((el)=>observer.observe(el));
 
 
 
 
 function App() {
 
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    });
+
+    const hiddenElements = document.querySelectorAll('.hidden');
+    hiddenElements.forEach((el) => observer.observe(el));
+
+    return () => {
+      // Cleanup observer if needed
+      hiddenElements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+  
   const mcStyle={
   color: 'hsl(197, 95%, 56%),',
   }
