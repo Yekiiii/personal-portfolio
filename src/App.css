@@ -4,6 +4,42 @@ a{
 }
 /*BG*/
 
+.navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  margin-top: 3vh;
+  border-radius: 10px;
+  position: fixed;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.navbar-links {
+  display: flex;
+}
+
+.navbar-link {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 1rem;
+}
+
+.navbar-link:hover {
+  color: #ccc;
+}
+
+
 
 .App-header {
   background-color: #f1f1f1;
@@ -138,7 +174,8 @@ a{
 }
 
 #nm-div, #nl-div {
-  background-color: black;
+
+  background-color: white;
   width: 300px;
   height: 400px;
   border: 1px solid #e1e1e1;
@@ -154,11 +191,11 @@ a{
   height: 200px;
 }
 .ed-name{
-  color: white;
+  color: black;
 }
 
 #nm-div:hover, #nl-div:hover{
-  transform: scale(1.1);
+  transform: scale(1.02);
   transition: 0.3s;
 }
 
@@ -168,13 +205,14 @@ a{
   opacity:0;
   transition:  all 1.5s;
   filter: blur(5px);
-  transform: translateX(-100%);
+
 }
 .show{
   opacity: 1;
   filter: blur(0);
-  transform: translateX(0);
 }
+
+
 
 /*ABOUT ME*//*ABOUT ME*//*ABOUT ME*//*ABOUT ME*//*ABOUT ME*//*ABOUT ME*//*ABOUT ME*/
 #about-me-div{
@@ -231,30 +269,11 @@ a{
 #animeSpan{}
 #gamesSpan{}
 
-.about-grid-item:hover{
-  background-color: #afa9ff;
-  z-index: 1;
-  transform: translate(-230px, -130px) scaleX(2.4) scaleY(4);
-}
-#anime:hover{
-  transform: translate(-230px, -130px) scaleX(2.4) scaleY(4);
-}
-#games:hover{
-  transform: translate(230px, -130px) scaleX(2.4) scaleY(4);
-}
-#music:hover{
-  transform: translate(-230px, 130px) scaleX(2.4) scaleY(4);
-}
-#coding:hover{
-  transform: translate(230px, 130px) scaleX(2.4) scaleY(4);
-}
-/*ABOUT ME*//*ABOUT ME*//*ABOUT ME*//*ABOUT ME*//*ABOUT ME*//*ABOUT ME*//*ABOUT ME*/
-
 
 
 
 #my-tech{
-  background-color: black;
+  background-color: white;
   
   
 }
@@ -272,13 +291,248 @@ a{
   height: 100px;
   width: 100px;
   margin: 50px;
+  transition: 0.3s;
 }
+.tech-png:hover{
+  height: 100px;
+  width: 100px;
+  margin: 50px;
+  filter: drop-shadow(0 0 1em #646cffaa);
+
+}
+
+
 #tech-grid{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 }
 #tech-grid-container{
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+#my-work{
+  background-color: black;
+}
+
+#my-certs{
+  background-color: white;
+}
+
+#my-repos{
+  background-color: black;
+}
+
+.black{
+  color: #000;
+}
+
+
+#repositories {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.repository {
+height: 300px;
+width: 250px;
+  background-color: black;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.loader {
+  display: none;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+
+input[type="number"] {
+  width: 50px;
+}
+
+input[type="search"] {
+  width: 200px;
+  margin-right: 10px;
+}
+
+
+/* Add this CSS to your existing stylesheet or style section */
+.topic {
+display: inline-block;
+padding: 5px 10px;
+margin: 5px;
+background-color: #e0e0e0;
+border-radius: 5px;
+}
+
+.topics-container {
+margin-top: 10px;
+}
+
+
+.pagButton{
+height:50px; 
+width: 120px;
+border-radius: 7px;
+background-color: black;
+color:white;
+border-style: solid;
+border-color: white;
+transition: 0.3s;
+}
+
+.pagNumButton{
+height:50px; 
+width: 50px;
+border-radius: 7px;
+background-color: black;
+color:white;
+border-style: solid;
+border-color: white;
+transition: 0.3s;
+}
+.pagNumButton:hover{
+background-color:#333;
+
+transition: 0.3s;
+}
+
+
+.pagButton:hover{
+background-color:#333;
+
+transition: 0.3s;
+}
+
+
+.styled-form {
+padding: 15px;
+display: flex;
+justify-content: space-between;
+width: 98%;
+margin:0;
+}
+/* Adjust spacing and width for better alignment */
+
+.perPage-label{
+font-size: 20px;
+}
+
+.current{
+background-color: white;
+border-color: black;
+color: black;
+}
+.border-wrapper{
+  display: flex;
+ 
+  width: fit-content;
+  padding: 1rem;
+  position: relative;
+  background: linear-gradient(to right, #ebb0ff, #afa9ff);
+  padding: 3px;
+  border-radius: 10px;
+  
+}
+
+
+
+.certifications {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.certificate {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px;
+  transition: 0.3s;
+
+}
+
+.certificate:hover{
+  transform: scale(1.05);
+}
+
+.certificate h2 {
+  color: #333;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.certificate p, a {
+  color: #666;
+  font-size: 1em;
+  margin-bottom: 5px;
+}
+
+.certificate a {
+  
+  border-style: solid;
+  border-radius: 5px;
+  border-color: #666;
+}
+.white{
+  color: white !important;
+}
+
+
+.work-experience {
+  background-color:black;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.job {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.job h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.job p {
+  margin-bottom: 10px;
+}
+
+.skills h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.skills ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.skills li {
+  margin-bottom: 5px;
+}
+
+.job-left{
+  width: 40%;
+}
+
+.color-theme{
+  background: -webkit-linear-gradient(#ebb0ff, #afa9ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
